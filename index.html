@@ -27,33 +27,9 @@
     <link rel="stylesheet" href="assets/css/aos.css" />
     <!-- Main css -->
     <link rel="stylesheet" href="assets/css/main.css" />
-    
+
     <!-- Responsive Custom Tweaks -->
     <style>
-      /* Fix 1: Pull the hero portrait down into the middle of the text */
-      .banner-three-man {
-        top: 105px !important;
-        bottom: auto !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        z-index: 2 !important;
-      }
-      .banner-three-man img {
-        max-height: 480px !important;
-        width: auto !important;
-        display: block !important;
-        margin: 0 auto !important;
-      }
-
-      /* Fix 2: Ensure the About photo animates smoothly like the original video */
-      .about-three-thumb {
-        overflow: hidden !important;
-        position: relative !important;
-      }
-      .about-three-thumb img {
-        object-fit: cover !important;
-        display: block !important;
-      }
       html, body {
         overflow-x: hidden;
         width: 100%;
@@ -62,18 +38,41 @@
         max-width: 100%;
         height: auto;
       }
-      /* Center alignment for hero title & cutout */
+
+      /* Hero Banner Containment & Portrait Alignment */
+      .banner-three-area {
+        position: relative !important;
+        overflow: hidden !important;
+      }
       .banner-three-title {
         text-align: center !important;
       }
       .banner-three-man {
+        top: 105px !important;
+        bottom: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 2 !important;
         text-align: center;
       }
       .banner-three-man img {
-        display: inline-block;
-        margin: 0 auto;
+        max-height: 480px !important;
+        width: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
       }
-      /* Hero banner responsiveness */
+
+      /* About Section Photo Styling */
+      .about-three-thumb {
+        overflow: hidden !important;
+        position: relative !important;
+      }
+      .about-three-thumb img {
+        object-fit: cover !important;
+        display: block !important;
+      }
+
+      /* Responsive Rules */
       @media (max-width: 991px) {
         .banner-three-thumb {
           margin-top: 2rem;
@@ -372,7 +371,7 @@
             <div class="row">
               <div class="col-xl-12">
                 <div class="banner-three-wrapper position-relative z-1">
-                  <!-- Original placement & classes restored -->
+                  <!-- Cutout portrait placed exactly across the name -->
                   <div
                     class="banner-three-man position-absolute start-50 translate-middle-x"
                   >
@@ -542,20 +541,6 @@
 
         <!-- About Section -->
         <section id="about" class="about-three-area py-120 position-relative z-1">
-          <div
-  class="about-three-thumb w-100 tw-clip-anim tw-rounded-lg"
-  data-aos="fade-up"
-  data-aos-duration="1000"
-  data-aos-delay="200"
->
-  <img
-    class="tw-anim-img w-100 tw-rounded-lg"
-    data-animate="true"
-    src="assets/images/thumbs/devender-about.jpg"
-    alt="Ashish About"
-    style="object-fit: cover; max-height: 650px;"
-  />
-</div>
           <div class="container tw-container-1800-px">
             <div class="about-three-top position-relative z-1">
               <div class="row justify-content-center tw-mb-21">
@@ -577,7 +562,7 @@
                     data-aos-duration="1000"
                     data-aos-delay="200"
                   >
-                    <!-- Second photo file slot -->
+                    <!-- Single cleanly placed About Photo -->
                     <img
                       class="tw-anim-img w-100 tw-rounded-lg"
                       data-animate="true"
@@ -623,8 +608,7 @@
                             <span
                               class="text-main-two-600 fw-bold text-uppercase"
                               style="font-size: 0.75rem; line-height: 1.1; font-weight: 700; display: block;"
-                              >With Me <i class="ph ph-arrow-up-right"></i></span
-                            >
+                              >With Me <i class="ph ph-arrow-up-right"></i></span>
                           </span>
                           <i class="tw-btn-circle-dot bg-main-two-600"></i>
                         </a>
@@ -1414,7 +1398,7 @@
                   <span class="text-main-two-600 text-uppercase fw-bold tracking-wider tw-text-sm border border-neutral-800 tw-px-4 tw-py-2 tw-rounded-md">CONNECT ACROSS PLATFORMS</span>
                   <h2 class="tw-text-15 text-white font-heading tw-mt-4 tw-mb-4">Let's Build Something Great Together</h2>
                   <p class="tw-text-xl text-neutral-400 tw-mb-10">Open for full-time opportunities, data consulting, and operations management roles.</p>
-                  
+
                   <div class="d-flex align-items-center justify-content-center flex-wrap tw-gap-4">
                     <a class="tw-text-lg text-white bg-neutral-900 border border-neutral-800 tw-px-6 tw-py-4 tw-rounded-lg d-inline-flex align-items-center tw-gap-3 hover-border-main-two-600 hover-bg-main-two-600 tw-transition-3" href="https://linkedin.com/in/ashishsontakke705" target="_blank">
                       <i class="ph ph-linkedin-logo tw-text-2xl"></i> <span class="fw-semibold">LinkedIn</span>
