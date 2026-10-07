@@ -13,7 +13,6 @@
     />
     <meta name="robots" content="INDEX,FOLLOW" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Title -->
     <title>Ashish - Operations & Data Analyst Portfolio</title>
     <!-- Favicon -->
     <link rel="icon" href="assets/images/logo/favicon.png" type="image/png" />
@@ -28,41 +27,124 @@
     <!-- Main css -->
     <link rel="stylesheet" href="assets/css/main.css" />
     
-    <!-- Responsive Custom Tweaks -->
+    <!-- Precision Center Alignment & Dark Card Styles -->
     <style>
       html, body {
         overflow-x: hidden;
         width: 100%;
+        background-color: #0d0d0d;
       }
       img {
         max-width: 100%;
         height: auto;
       }
-      /* Hero banner responsiveness */
+
+      /* Hero Section: Centering Ashish & Cutout */
+      .banner-three-area {
+        position: relative;
+        overflow: hidden;
+      }
+      .banner-three-wrapper {
+        position: relative;
+        text-align: center;
+      }
+      .banner-three-title {
+        text-align: center !important;
+        margin: 0 auto 30px auto !important;
+        display: block !important;
+        width: 100% !important;
+        letter-spacing: 0.08em;
+      }
+      .banner-three-man {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        bottom: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-end !important;
+        width: 100% !important;
+        max-width: 540px !important;
+        pointer-events: none !important;
+        z-index: 2;
+      }
+      .banner-three-man img {
+        display: block !important;
+        margin: 0 auto !important;
+        max-height: 540px !important;
+        width: auto !important;
+        object-fit: contain !important;
+      }
+
+      /* About Section Photo */
+      .about-three-thumb {
+        background-color: #161616;
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 420px;
+        border: 1px solid #282828;
+      }
+      .about-three-thumb img {
+        width: 100%;
+        height: 100%;
+        max-height: 600px;
+        object-fit: cover !important;
+        display: block;
+      }
+
+      /* Custom Analytics Visual Preview Cards */
+      .analytics-card-preview {
+        background: linear-gradient(145deg, #151515, #1d1d1d);
+        border: 1px solid #2a2a2a;
+        border-radius: 14px;
+        padding: 34px 28px;
+        min-height: 230px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+      }
+      .portfolio-three-item:hover .analytics-card-preview {
+        border-color: #ff5722;
+        box-shadow: 0 10px 30px rgba(255, 87, 34, 0.15);
+        transform: translateY(-4px);
+      }
+      .metric-pill-badge {
+        display: inline-block;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #ff5722;
+        background: rgba(255, 87, 34, 0.12);
+        border: 1px solid rgba(255, 87, 34, 0.3);
+        padding: 4px 12px;
+        border-radius: 999px;
+        width: fit-content;
+      }
+
       @media (max-width: 991px) {
+        .banner-three-man img {
+          max-height: 420px !important;
+        }
         .banner-three-thumb {
           margin-top: 2rem;
           margin-bottom: 2rem;
-          text-align: center;
-        }
-        .banner-three-thumb img {
-          max-height: 450px;
-          object-fit: contain;
         }
         .tw-container-1800-px {
           padding-left: 15px !important;
           padding-right: 15px !important;
-        }
-        .about-three-counter {
-          margin-top: 1.5rem;
         }
         .footer-three-area {
           padding-top: 60px !important;
         }
       }
       @media (max-width: 575px) {
-        .banner-three-thumb img {
-          max-height: 320px;
+        .banner-three-man img {
+          max-height: 320px !important;
         }
         .tw-main-menu-mobile a {
           font-size: 1.4rem !important;
@@ -93,88 +175,43 @@
     </div>
     <!--==================== Preloader End ====================-->
 
-    <!--==================== Overlay Start ====================-->
     <div class="overlay"></div>
-    <!--==================== Overlay End ====================-->
-
-    <!--==================== Sidebar Overlay End ====================-->
     <div class="side-overlay"></div>
-    <!--==================== Sidebar Overlay End ====================-->
 
-    <!--==================== Begin Magic Cursor Start ====================-->
     <div id="magic-cursor">
       <div id="ball"></div>
     </div>
-    <!--==================== Begin Magic Cursor End ====================-->
 
-    <!-- Custom Toast Message start -->
     <div id="toast-container"></div>
-    <!-- Custom Toast Message End -->
 
-    <!-- ==================== Scroll to Top End Here ==================== -->
     <div class="back-to-top-wrapper">
       <button id="back_to_top" type="button" class="back-to-top-btn">
-        <svg
-          width="12"
-          height="7"
-          viewBox="0 0 12 7"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M11 6L6 1L1 6"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
+        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </button>
     </div>
-    <!-- ==================== Scroll to Top End Here ==================== -->
 
-    <!-- ==================== Offcanvus Mobile Menu Start Here ==================== -->
+    <!-- ==================== Offcanvas Mobile Menu ==================== -->
     <div class="tw-offcanvas-2-area p-relative">
       <div class="tw-offcanvas-2-bg is-left left-box"></div>
       <div class="tw-offcanvas-2-bg is-right right-box d-none d-md-block"></div>
       <div class="tw-offcanvas-2-wrapper">
         <div class="tw-offcanvas-2-left left-box">
-          <div
-            class="tw-offcanvas-2-left-wrap d-flex justify-content-between align-items-center"
-          >
+          <div class="tw-offcanvas-2-left-wrap d-flex justify-content-between align-items-center">
             <div class="twoffcanvas__logo">
               <a class="logo-1" href="index.html">
                 <h3 class="text-white fw-bold tw-mb-0">ASHISH</h3>
               </a>
             </div>
             <div class="tw-offcanvas-2-close d-md-none text-end">
-              <button class="tw-offcanvas-2-close-btn tw-offcanvas-2-close-btn">
-                <span class="text">
-                  <span class="text-white">close</span>
-                </span>
+              <button class="tw-offcanvas-2-close-btn">
+                <span class="text"><span class="text-white">close</span></span>
                 <span class="d-inline-block">
-                  <span>
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        width="32.621"
-                        height="1.00918"
-                        transform="matrix(0.704882 0.709325 -0.704882 0.709325 1.0061 0)"
-                        fill="currentcolor"
-                      />
-                      <rect
-                        width="32.621"
-                        height="1.00918"
-                        transform="matrix(0.704882 -0.709325 0.704882 0.709325 0 23.2842)"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32.621" height="1.00918" transform="matrix(0.704882 0.709325 -0.704882 0.709325 1.0061 0)" fill="currentColor" />
+                    <rect width="32.621" height="1.00918" transform="matrix(0.704882 -0.709325 0.704882 0.709325 0 23.2842)" fill="currentColor" />
+                  </svg>
                 </span>
               </button>
             </div>
@@ -182,54 +219,28 @@
           <div class="tw-main-menu-mobile tw-mt-8">
             <nav>
               <ul class="d-flex flex-column tw-gap-5 list-unstyled tw-mb-0">
-                <li><a href="#about" class="text-white text-uppercase fw-bold hover-text-main-two-600 tw-transition-3" style="color: #ffffff !important; font-size: 1.8rem; font-weight: 700; text-decoration: none; display: inline-block; white-space: nowrap;">About</a></li>
-                <li><a href="#expertise" class="text-white text-uppercase fw-bold hover-text-main-two-600 tw-transition-3" style="color: #ffffff !important; font-size: 1.8rem; font-weight: 700; text-decoration: none; display: inline-block; white-space: nowrap;">Core Expertise</a></li>
-                <li><a href="#projects" class="text-white text-uppercase fw-bold hover-text-main-two-600 tw-transition-3" style="color: #ffffff !important; font-size: 1.8rem; font-weight: 700; text-decoration: none; display: inline-block; white-space: nowrap;">Projects</a></li>
-                <li><a href="#what-i-build" class="text-white text-uppercase fw-bold hover-text-main-two-600 tw-transition-3" style="color: #ffffff !important; font-size: 1.8rem; font-weight: 700; text-decoration: none; display: inline-block; white-space: nowrap;">What I Deliver</a></li>
-                <li><a href="#contact" class="text-white text-uppercase fw-bold hover-text-main-two-600 tw-transition-3" style="color: #ffffff !important; font-size: 1.8rem; font-weight: 700; text-decoration: none; display: inline-block; white-space: nowrap;">Connect</a></li>
+                <li><a href="#about" class="text-white text-uppercase fw-bold" style="color: #ffffff !important; font-size: 1.8rem;">About</a></li>
+                <li><a href="#expertise" class="text-white text-uppercase fw-bold" style="color: #ffffff !important; font-size: 1.8rem;">Core Expertise</a></li>
+                <li><a href="#projects" class="text-white text-uppercase fw-bold" style="color: #ffffff !important; font-size: 1.8rem;">Projects</a></li>
+                <li><a href="#what-i-build" class="text-white text-uppercase fw-bold" style="color: #ffffff !important; font-size: 1.8rem;">What I Deliver</a></li>
+                <li><a href="#contact" class="text-white text-uppercase fw-bold" style="color: #ffffff !important; font-size: 1.8rem;">Connect</a></li>
               </ul>
             </nav>
           </div>
         </div>
-        <div
-          class="tw-offcanvas-2-right right-box d-none d-md-block p-relative"
-        >
+        <div class="tw-offcanvas-2-right right-box d-none d-md-block p-relative">
           <div class="tw-offcanvas-2-close text-end">
             <button class="tw-offcanvas-2-close-btn">
-              <span class="text">
-                <span>close</span>
-              </span>
+              <span class="text"><span>close</span></span>
               <span class="d-inline-block">
-                <span>
-                  <svg
-                    width="38"
-                    height="38"
-                    viewBox="0 0 38 38"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9.80859 9.80762L28.1934 28.1924"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M9.80859 28.1924L28.1934 9.80761"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.80859 9.80762L28.1934 28.1924" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.80859 28.1924L28.1934 9.80761" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
               </span>
             </button>
           </div>
-          <div
-            class="tw-offcanvas-2-right-inner d-flex flex-column justify-content-between h-100"
-          >
+          <div class="tw-offcanvas-2-right-inner d-flex flex-column justify-content-between h-100">
             <div class="twoffcanvas__contact-info">
               <div class="twoffcanvas__contact-title">
                 <h5 class="text-white tw-mb-1">Ashish M. Sontakke</h5>
@@ -239,17 +250,17 @@
                 <h6 class="text-white tw-mb-3">Connect Across Platforms</h6>
                 <ul class="d-flex flex-wrap tw-gap-3 list-unstyled">
                   <li>
-                    <a class="tw-text-sm text-white border border-neutral-700 tw-px-3 tw-py-2 tw-rounded-md d-inline-flex align-items-center tw-gap-2 hover-bg-main-two-600 hover-text-white tw-transition-3" href="https://linkedin.com/in/ashishsontakke705" target="_blank">
+                    <a class="tw-text-sm text-white border border-neutral-700 tw-px-3 tw-py-2 tw-rounded-md d-inline-flex align-items-center tw-gap-2" href="https://linkedin.com/in/ashishsontakke705" target="_blank">
                       <i class="ph ph-linkedin-logo"></i> LinkedIn
                     </a>
                   </li>
                   <li>
-                    <a class="tw-text-sm text-white border border-neutral-700 tw-px-3 tw-py-2 tw-rounded-md d-inline-flex align-items-center tw-gap-2 hover-bg-main-two-600 hover-text-white tw-transition-3" href="https://github.com" target="_blank">
+                    <a class="tw-text-sm text-white border border-neutral-700 tw-px-3 tw-py-2 tw-rounded-md d-inline-flex align-items-center tw-gap-2" href="https://github.com" target="_blank">
                       <i class="ph ph-github-logo"></i> GitHub
                     </a>
                   </li>
                   <li>
-                    <a class="tw-text-sm text-white border border-neutral-700 tw-px-3 tw-py-2 tw-rounded-md d-inline-flex align-items-center tw-gap-2 hover-bg-main-two-600 hover-text-white tw-transition-3" href="mailto:amson705@gmail.com">
+                    <a class="tw-text-sm text-white border border-neutral-700 tw-px-3 tw-py-2 tw-rounded-md d-inline-flex align-items-center tw-gap-2" href="mailto:amson705@gmail.com">
                       <i class="ph ph-envelope"></i> Email
                     </a>
                   </li>
@@ -260,244 +271,146 @@
         </div>
       </div>
     </div>
-    <!-- ==================== Offcanvus Mobile Menu End Here ==================== -->
 
-    <!-- ==================== Header Start Here ==================== -->
-    <header
-      class="header header-two header-three tw-transition-all tw-z-99 position-relative"
-    >
+    <!-- ==================== Header ==================== -->
+    <header class="header header-two header-three tw-transition-all tw-z-99 position-relative">
       <div class="container tw-container-1800-px">
-        <nav
-          class="d-flex align-items-center justify-content-between position-relative"
-        >
-          <!-- Logo Start -->
+        <nav class="d-flex align-items-center justify-content-between position-relative">
           <div class="header-three-logo tw-rounded-md">
             <a href="index.html" class="link text-decoration-none">
               <h2 class="text-heading fw-bold tw-mb-0 tracking-wider">ASHISH</h2>
             </a>
           </div>
-          <!-- Logo End  -->
 
-          <!-- Quick Navigation Links Start -->
           <div class="header-menu d-none d-lg-block">
             <div class="main-menu">
               <nav class="tw-main-menu-content">
                 <ul class="d-flex tw-gap-8 list-unstyled tw-mb-0 align-items-center">
-                  <li><a href="#about" class="text-black fw-bold text-decoration-none tw-text-lg hover-text-main-two-600" style="color: #111111 !important; font-size: 1.1rem; font-weight: 700;">About</a></li>
-                  <li><a href="#expertise" class="text-black fw-bold text-decoration-none tw-text-lg hover-text-main-two-600" style="color: #111111 !important; font-size: 1.1rem; font-weight: 700;">Expertise</a></li>
-                  <li><a href="#projects" class="text-black fw-bold text-decoration-none tw-text-lg hover-text-main-two-600" style="color: #111111 !important; font-size: 1.1rem; font-weight: 700;">Projects</a></li>
-                  <li><a href="#what-i-build" class="text-black fw-bold text-decoration-none tw-text-lg hover-text-main-two-600" style="color: #111111 !important; font-size: 1.1rem; font-weight: 700;">What I Deliver</a></li>
-                  <li><a href="#contact" class="text-black fw-bold text-decoration-none tw-text-lg hover-text-main-two-600" style="color: #111111 !important; font-size: 1.1rem; font-weight: 700;">Contact</a></li>
+                  <li><a href="#about" class="text-black fw-bold text-decoration-none" style="color: #111111 !important; font-size: 1.1rem; font-weight: 700;">About</a></li>
+                  <li><a href="#expertise" class="text-black fw-bold text-decoration-none" style="color: #111111 !important; font-size: 1.1rem; font-weight: 700;">Expertise</a></li>
+                  <li><a href="#projects" class="text-black fw-bold text-decoration-none" style="color: #111111 !important; font-size: 1.1rem; font-weight: 700;">Projects</a></li>
+                  <li><a href="#what-i-build" class="text-black fw-bold text-decoration-none" style="color: #111111 !important; font-size: 1.1rem; font-weight: 700;">What I Deliver</a></li>
+                  <li><a href="#contact" class="text-black fw-bold text-decoration-none" style="color: #111111 !important; font-size: 1.1rem; font-weight: 700;">Contact</a></li>
                 </ul>
               </nav>
             </div>
           </div>
-          <!-- Navigation Links End -->
 
-          <!-- Header Right start -->
           <div class="header-right d-flex align-items-center tw-gap-705">
-            <!-- Menu Button Start  -->
             <div class="header-three-menu">
-              <button
-                class="tw-offcanvas-open-btn tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center tw-transition-3 tw-rounded-md"
-              >
-                <span
-                  ><img
-                    class="tw-transition-3"
-                    src="assets/images/icons/header-three-toggle.svg"
-                    alt="toggle"
-                /></span>
+              <button class="tw-offcanvas-open-btn tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center tw-rounded-md">
+                <span><img src="assets/images/icons/header-three-toggle.svg" alt="toggle" /></span>
               </button>
             </div>
-            <!-- Menu Button End  -->
-
-            <!-- Header Button Start  -->
             <div class="header-three-button d-none d-md-block">
-              <a
-                class="tw-hover-btn bg-black text-white fw-bold tw-py-4 tw-px-10 d-inline-block hover-text-white text-uppercase tw-rounded-md"
-                href="#contact"
-              >
+              <a class="tw-hover-btn bg-black text-white fw-bold tw-py-4 tw-px-10 d-inline-block text-uppercase tw-rounded-md" href="#contact">
                 Let's Connect
                 <span class="tw-hover-btn-circle-dot bg-main-two-600"></span>
               </a>
             </div>
-            <!-- Header Button End  -->
           </div>
-
-          <!-- Header Right End  -->
         </nav>
       </div>
     </header>
-    <!-- ==================== Header End Here ==================== -->
+
+    <!-- ==================== Smooth Content Wrapper ==================== -->
     <div id="smooth-wrapper">
       <div id="smooth-content">
+
         <!-- Banner / Hero Section -->
         <section class="banner-three-area">
           <div class="container tw-container-1800-px">
             <div class="row">
               <div class="col-xl-12">
-                <div class="banner-three-wrapper position-relative z-1">
-                  <div
-                    class="banner-three-man position-absolute start-50 translate-middle-x"
-                  >
-                    <img
-                      src="assets/images/shapes/banner-three-man.png"
-                      alt="Ashish"
-                    />
+                <div class="banner-three-wrapper position-relative z-1 text-center">
+                  
+                  <!-- Centered Cutout Portrait -->
+                  <div class="banner-three-man">
+                    <img src="assets/images/shapes/banner-three-man.png" alt="Ashish Sontakke" />
                   </div>
+
+                  <!-- Perfectly Centered Giant Display Name -->
                   <h1 class="banner-three-title text-black tw-mb-30 text-uppercase">
                     ASHISH
                   </h1>
-                  <div
-                    class="banner-three-wrap d-flex justify-content-between align-items-end position-relative z-1"
-                  >
-                    <div
-                      class="banner-three-left tw-rounded-lg"
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="200"
-                    >
+
+                  <div class="banner-three-wrap d-flex justify-content-between align-items-end position-relative z-1">
+                    <div class="banner-three-left tw-rounded-lg text-start" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                       <h2 class="banner-three-left-title tw-text-3xl tw-mb-6">
                         Hi, I'm Ashish <br />
                         <span class="text-main-two-600">Operations & Data Analyst</span>
                       </h2>
                       <div class="banner-three-list">
                         <ul>
-                          <li
-                            class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4"
-                          >
-                            <span
-                              ><img
-                                src="assets/images/icons/banner-three-pluse.svg"
-                                alt="plus"
-                            /></span>
+                          <li class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4">
+                            <span><img src="assets/images/icons/banner-three-pluse.svg" alt="+" /></span>
                             Exploratory Data Analysis & Cleansing
                           </li>
-                          <li
-                            class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4"
-                          >
-                            <span
-                              ><img
-                                src="assets/images/icons/banner-three-pluse.svg"
-                                alt="plus"
-                            /></span>
+                          <li class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4">
+                            <span><img src="assets/images/icons/banner-three-pluse.svg" alt="+" /></span>
                             Power BI, Tableau & Advanced Excel
                           </li>
-                          <li
-                            class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4"
-                          >
-                            <span
-                              ><img
-                                src="assets/images/icons/banner-three-pluse.svg"
-                                alt="plus"
-                            /></span>
+                          <li class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4">
+                            <span><img src="assets/images/icons/banner-three-pluse.svg" alt="+" /></span>
                             Deloitte Digital Elite Challenge Finalist
                           </li>
-                          <li
-                            class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4"
-                          >
-                            <span
-                              ><img
-                                src="assets/images/icons/banner-three-pluse.svg"
-                                alt="plus"
-                            /></span>
+                          <li class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4">
+                            <span><img src="assets/images/icons/banner-three-pluse.svg" alt="+" /></span>
                             Tata Verified: BI, GenAI & Cybersecurity IAM
                           </li>
-                          <li
-                            class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4"
-                          >
-                            <span
-                              ><img
-                                src="assets/images/icons/banner-three-pluse.svg"
-                                alt="plus"
-                            /></span>
+                          <li class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4">
+                            <span><img src="assets/images/icons/banner-three-pluse.svg" alt="+" /></span>
                             B.A. (RTMNU) & ITI Wireman Trade Certified
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div
-                      class="banner-three-center text-center"
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="200"
-                    >
+
+                    <div class="banner-three-center text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                       <h3 class="banner-three-center-title tw-text-120">
                         Analyzing 541k+ records, architecting BI dashboards & enterprise systems.
                       </h3>
                       <div class="banner-three-button">
-                        <a
-                          class="tw-hover-btn bg-black text-white fw-bold tw-py-4 tw-px-10 d-inline-block hover-text-white text-uppercase tw-rounded-lg"
-                          href="#projects"
-                        >
+                        <a class="tw-hover-btn bg-black text-white fw-bold tw-py-4 tw-px-10 d-inline-block text-uppercase tw-rounded-lg" href="#projects">
                           explore projects
-                          <span
-                            class="tw-hover-btn-circle-dot bg-main-two-600"
-                          ></span>
+                          <span class="tw-hover-btn-circle-dot bg-main-two-600"></span>
                         </a>
                       </div>
                     </div>
-                    <div
-                      class="banner-three-right tw-rounded-lg"
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="300"
-                    >
-                      <div
-                        class="banner-three-counter-item tw-rounded-md tw-mb-4 position-relative"
-                      >
-                        <h4
-                          class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-heading tw-mb-2 lh-1"
-                        >
+
+                    <div class="banner-three-right tw-rounded-lg text-start" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                      <div class="banner-three-counter-item tw-rounded-md tw-mb-4 position-relative">
+                        <h4 class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-heading tw-mb-2 lh-1">
                           541K+
                         </h4>
-                        <p
-                          class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading"
-                        >
+                        <p class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading">
                           Transactions Cleaned & Segmented
                         </p>
                       </div>
-                      <div
-                        class="banner-three-counter-item tw-rounded-md tw-mb-4 ms-auto bg-black"
-                      >
-                        <h4
-                          class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-white tw-mb-2 lh-1"
-                        >
+                      <div class="banner-three-counter-item tw-rounded-md tw-mb-4 ms-auto bg-black">
+                        <h4 class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-white tw-mb-2 lh-1">
                           5+
                         </h4>
-                        <p
-                          class="banner-three-counter-paragraph tw-text-lg fw-medium text-white"
-                        >
+                        <p class="banner-three-counter-paragraph tw-text-lg fw-medium text-white">
                           Enterprise Challenge Credentials
                         </p>
                       </div>
-                      <div
-                        class="banner-three-counter-item tw-rounded-md tw-mb-4"
-                      >
-                        <h4
-                          class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-heading tw-mb-2 lh-1"
-                        >
+                      <div class="banner-three-counter-item tw-rounded-md tw-mb-4">
+                        <h4 class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-heading tw-mb-2 lh-1">
                           95%
                         </h4>
-                        <p
-                          class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading"
-                        >
+                        <p class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading">
                           Verified Keyboarding Precision
                         </p>
                       </div>
                     </div>
-                    <div
-                      class="banner-three-line-shape position-absolute start-50 translate-middle-x z-n1"
-                    >
-                      <img
-                        src="assets/images/shapes/banner-three-shape.png"
-                        alt="shape"
-                      />
-                      <div class="banner-three-carcel-shape">
-                        <div><span></span></div>
-                      </div>
+
+                    <div class="banner-three-line-shape position-absolute start-50 translate-middle-x z-n1">
+                      <img src="assets/images/shapes/banner-three-shape.png" alt="shape" />
+                      <div class="banner-three-carcel-shape"><div><span></span></div></div>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -511,38 +424,23 @@
               <div class="row justify-content-center tw-mb-21">
                 <div class="col-xl-10">
                   <div class="text-center">
-                    <h2
-                      class="about-three-title text-heading tw-text-15 tw-itm-title tw-itm-anim"
-                    >
+                    <h2 class="about-three-title text-heading tw-text-15">
                       Specializing in structured data analytics, executive BI dashboards, enterprise security governance, and operational workflow reliability.
                     </h2>
                   </div>
                 </div>
               </div>
-              <div class="row">
+
+              <div class="row align-items-center">
                 <div class="col-xl-6">
-                  <div
-                    class="about-three-thumb w-100 tw-clip-anim tw-rounded-lg"
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-delay="200"
-                  >
-                    <img
-                      class="tw-anim-img w-100 tw-rounded-lg"
-                      data-animate="true"
-                      src="assets/images/thumbs/devender-about.jpg"
-                      alt="Ashish About"
-                      style="object-fit: cover; max-height: 650px;"
-                    />
+                  <div class="about-three-thumb w-100" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <!-- Second Image: Ashish Workspace / Profile Photo -->
+                    <img src="assets/images/thumbs/devender-about.jpg" alt="Ashish About" onerror="this.src='assets/images/shapes/banner-three-man.png';" />
                   </div>
                 </div>
+
                 <div class="col-xl-6">
-                  <div
-                    class="about-three-right"
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-delay="300"
-                  >
+                  <div class="about-three-right" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                     <div>
                       <p class="tw-text-xl tw-mb-8">
                         Hi, I'm <strong>Ashish M. Sontakke</strong>, an Operations & Data Analyst based in Wardha, Maharashtra.
@@ -554,126 +452,53 @@
                         My verified simulations cover the Deloitte Digital Elite Challenge (Sales AI & Cyber Compliance) and 4 Tata enterprise simulations across Data Visualisation, GenAI Analytics, Identity & Access Management (IAM), and ESG Reporting.
                       </p>
                     </div>
+
                     <div class="about-three-counter d-inline-block">
                       <div class="tw-hover-btn-wrapper d-inline-block">
-                        <a
-                          class="tw-btn-circle tw-hover-btn-item tw-hover-btn lh-1 d-inline-flex justify-content-center align-items-center rounded-circle position-relative overflow-hidden border border-1 border-neutral-200"
-                          style="width: 110px !important; height: 110px !important;"
-                          href="#contact"
-                        >
-                          <span
-                            class="d-flex flex-column justify-content-center text-center p-1"
-                          >
-                            <span
-                              class="text-heading fw-bold text-uppercase"
-                              style="font-size: 0.75rem; line-height: 1.1; font-weight: 700; display: block;"
-                              >Connect</span
-                            >
-                            <span
-                              class="text-main-two-600 fw-bold text-uppercase"
-                              style="font-size: 0.75rem; line-height: 1.1; font-weight: 700; display: block;"
-                              >With Me <i class="ph ph-arrow-up-right"></i></span
-                            >
+                        <a class="tw-btn-circle tw-hover-btn-item lh-1 d-inline-flex justify-content-center align-items-center rounded-circle border border-1 border-neutral-200" style="width: 110px !important; height: 110px !important;" href="#contact">
+                          <span class="d-flex flex-column justify-content-center text-center p-1">
+                            <span class="text-heading fw-bold text-uppercase" style="font-size: 0.75rem; line-height: 1.1; display: block;">Connect</span>
+                            <span class="text-main-two-600 fw-bold text-uppercase" style="font-size: 0.75rem; line-height: 1.1; display: block;">With Me <i class="ph ph-arrow-up-right"></i></span>
                           </span>
-                          <i class="tw-btn-circle-dot bg-main-two-600"></i>
                         </a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div
-                class="about-three-wrap-shape d-flex justify-content-between tw-mt-12"
-              >
-                <div
-                  class="banner-three-counter-item tw-rounded-md position-relative"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
-                >
-                  <h2
-                    class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-heading tw-mb-2 lh-1"
-                  >
+
+              <div class="about-three-wrap-shape d-flex justify-content-between tw-mt-12">
+                <div class="banner-three-counter-item tw-rounded-md position-relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                  <h2 class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-heading tw-mb-2 lh-1">
                     Analytics & BI
                   </h2>
-                  <p
-                    class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading"
-                  >
+                  <p class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading">
                     Power BI, Tableau, Advanced Excel, RFM Modeling
                   </p>
                 </div>
-                <div
-                  class="banner-three-counter-item tw-rounded-md position-relative"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="300"
-                >
-                  <h2
-                    class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-heading tw-mb-2 lh-1"
-                  >
+                <div class="banner-three-counter-item tw-rounded-md position-relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                  <h2 class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-heading tw-mb-2 lh-1">
                     Governance & Systems
                   </h2>
-                  <p
-                    class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading"
-                  >
+                  <p class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading">
                     IAM (RBAC), Least-Privilege, ESG Benchmarking, ERP
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div>
-            <img
-              class="about-three-shape position-absolute start-0 w-100"
-              src="assets/images/shapes/about-three-shape.png"
-              alt="shape"
-            />
-          </div>
         </section>
 
-        <!-- ======================== Marquee section start =========================== -->
+        <!-- Marquee Section -->
         <div class="marquee tw-pt-17 bg-black">
-          <div
-            class="marquee_left d-flex align-items-center justify-content-between tw-gap-16 overflow-hidden"
-          >
-            <div>
-              <h2
-                class="marquee-two-title marquee-three-title text-uppercase text-white"
-              >
-                DATA ANALYTICS <span class="text-white">-</span>
-              </h2>
-            </div>
-            <div>
-              <h2
-                class="marquee-two-title marquee-three-title text-uppercase text-stroke"
-              >
-                EXECUTIVE BI DASHBOARDS <span class="text-white">-</span>
-              </h2>
-            </div>
-            <div>
-              <h2
-                class="marquee-two-title marquee-three-title text-uppercase text-white"
-              >
-                IAM & CYBER GOVERNANCE <span class="text-white">-</span>
-              </h2>
-            </div>
-            <div>
-              <h2
-                class="marquee-two-title marquee-three-title text-uppercase text-stroke"
-              >
-                OPERATIONS MANAGEMENT <span class="text-white">-</span>
-              </h2>
-            </div>
-            <div>
-              <h2
-                class="marquee-two-title marquee-three-title text-uppercase text-white"
-              >
-                RFM SEGMENTATION <span class="text-white">-</span>
-              </h2>
-            </div>
+          <div class="marquee_left d-flex align-items-center justify-content-between tw-gap-16 overflow-hidden">
+            <div><h2 class="marquee-two-title marquee-three-title text-uppercase text-white">DATA ANALYTICS -</h2></div>
+            <div><h2 class="marquee-two-title marquee-three-title text-uppercase text-stroke">EXECUTIVE BI DASHBOARDS -</h2></div>
+            <div><h2 class="marquee-two-title marquee-three-title text-uppercase text-white">IAM & CYBER GOVERNANCE -</h2></div>
+            <div><h2 class="marquee-two-title marquee-three-title text-uppercase text-stroke">OPERATIONS MANAGEMENT -</h2></div>
+            <div><h2 class="marquee-two-title marquee-three-title text-uppercase text-white">RFM SEGMENTATION -</h2></div>
           </div>
         </div>
-        <!-- ======================== Marquee section end =========================== -->
 
         <!-- Core Expertise Section -->
         <section id="expertise" class="service-three-area bg-black pt-120 tw-pb-15">
@@ -684,238 +509,82 @@
                   <h2 class="text-white tw-text-15 text-center font-heading">Core Expertise</h2>
                 </div>
                 <div class="service-three-wrapper">
-                  <!-- 01. Data Analytics -->
-                  <div
-                    class="service-three-single"
-                    data-aos="fade-right"
-                    data-aos-duration="2000"
-                    data-aos-delay="200"
-                  >
-                    <div
-                      class="service-three-item d-flex justify-content-between align-items-center"
-                    >
+                  <!-- 01 Data Analytics -->
+                  <div class="service-three-single" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200">
+                    <div class="service-three-item d-flex justify-content-between align-items-center">
                       <div class="service-three-content d-flex tw-gap-14">
+                        <div><span class="service-three-number text-white tw-text-xl lh-1 tw-mt-5">01</span></div>
                         <div>
-                          <span
-                            class="service-three-number text-white tw-text-xl d-inline-flex align-items-center tw-gap-3 lh-1 tw-mt-5 tw-transition-3"
-                            >01
-                            <img
-                              class="tw-transition-3"
-                              src="assets/images/icons/service-three-arrow.svg"
-                              alt="arrow"
-                          /></span>
-                        </div>
-                        <div>
-                          <div>
-                            <h2
-                              class="service-three-title tw-text-15 text-white tw-mb-4"
-                            >
-                              <a href="#expertise">Data & Business Analytics</a>
-                            </h2>
-                          </div>
+                          <h2 class="service-three-title tw-text-15 text-white tw-mb-4"><a href="#expertise">Data & Business Analytics</a></h2>
                           <div class="portfolio-list portfolio-two-list">
                             <ul class="d-flex tw-gap-205 flex-wrap">
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Exploratory Data Analysis</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Data Cleansing & Filtering</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">RFM Segmentation</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Time-Series Trends</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Statistical Verification</span>
-                              </li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Exploratory Data Analysis</span></li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Data Cleansing & Filtering</span></li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">RFM Segmentation</span></li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Time-Series Trends</span></li>
                             </ul>
                           </div>
                         </div>
-                      </div>
-                      <div class="service-three-thumb">
-                        <img
-                          src="assets/images/thumbs/service-three-thumb1.png"
-                          alt="Data Analytics"
-                        />
                       </div>
                     </div>
                   </div>
 
-                  <!-- 02. BI & Visualisation -->
-                  <div
-                    class="service-three-single ms-auto"
-                    data-aos="fade-left"
-                    data-aos-duration="2000"
-                    data-aos-delay="300"
-                  >
-                    <div
-                      class="service-three-item d-flex justify-content-between align-items-center"
-                    >
+                  <!-- 02 BI & Visualisation -->
+                  <div class="service-three-single ms-auto" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="300">
+                    <div class="service-three-item d-flex justify-content-between align-items-center">
                       <div class="service-three-content d-flex tw-gap-14">
+                        <div><span class="service-three-number text-white tw-text-xl lh-1 tw-mt-5">02</span></div>
                         <div>
-                          <span
-                            class="service-three-number text-white tw-text-xl d-inline-flex align-items-center tw-gap-3 lh-1 tw-mt-5 tw-transition-3"
-                            >02
-                            <img
-                              class="tw-transition-3"
-                              src="assets/images/icons/service-three-arrow.svg"
-                              alt="arrow"
-                          /></span>
-                        </div>
-                        <div>
-                          <div>
-                            <h2
-                              class="service-three-title tw-text-15 text-white tw-mb-4"
-                            >
-                              <a href="#expertise">BI & Executive Visualisation</a>
-                            </h2>
-                          </div>
+                          <h2 class="service-three-title tw-text-15 text-white tw-mb-4"><a href="#expertise">BI & Executive Visualisation</a></h2>
                           <div class="portfolio-list portfolio-two-list">
                             <ul class="d-flex tw-gap-205 flex-wrap">
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Power BI</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Tableau Desktop</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Advanced Excel (VLOOKUP, Pivot)</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Pareto Distributions</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">C-Suite Storytelling</span>
-                              </li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Power BI</span></li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Tableau Desktop</span></li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Advanced Excel (VLOOKUP, Pivot)</span></li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Pareto Distributions</span></li>
                             </ul>
                           </div>
                         </div>
-                      </div>
-                      <div class="service-three-thumb">
-                        <img
-                          src="assets/images/thumbs/service-three-thumb2.png"
-                          alt="BI Visualisation"
-                        />
                       </div>
                     </div>
                   </div>
 
-                  <!-- 03. Enterprise Governance & Security -->
-                  <div
-                    class="service-three-single"
-                    data-aos="fade-right"
-                    data-aos-duration="2000"
-                    data-aos-delay="400"
-                  >
-                    <div
-                      class="service-three-item d-flex justify-content-between align-items-center"
-                    >
+                  <!-- 03 IAM & Cyber Governance -->
+                  <div class="service-three-single" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400">
+                    <div class="service-three-item d-flex justify-content-between align-items-center">
                       <div class="service-three-content d-flex tw-gap-14">
+                        <div><span class="service-three-number text-white tw-text-xl lh-1 tw-mt-5">03</span></div>
                         <div>
-                          <span
-                            class="service-three-number text-white tw-text-xl d-inline-flex align-items-center tw-gap-3 lh-1 tw-mt-5 tw-transition-3"
-                            >03
-                            <img
-                              class="tw-transition-3"
-                              src="assets/images/icons/service-three-arrow.svg"
-                              alt="arrow"
-                          /></span>
-                        </div>
-                        <div>
-                          <div>
-                            <h2
-                              class="service-three-title tw-text-15 text-white tw-mb-4"
-                            >
-                              <a href="#expertise">Cyber Governance & IAM</a>
-                            </h2>
-                          </div>
+                          <h2 class="service-three-title tw-text-15 text-white tw-mb-4"><a href="#expertise">Cyber Governance & IAM</a></h2>
                           <div class="portfolio-list portfolio-two-list">
                             <ul class="d-flex tw-gap-205 flex-wrap">
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Role-Based Access Control (RBAC)</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Least-Privilege Policies</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Compliance Automation Agents</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">ESG Benchmarking</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Access Review Audits</span>
-                              </li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Role-Based Access Control (RBAC)</span></li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Least-Privilege Policies</span></li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Access Review Audits</span></li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">ESG Benchmarking</span></li>
                             </ul>
                           </div>
                         </div>
-                      </div>
-                      <div class="service-three-thumb">
-                        <img
-                          src="assets/images/thumbs/service-three-thumb3.png"
-                          alt="Cyber Governance"
-                        />
                       </div>
                     </div>
                   </div>
 
-                  <!-- 04. Operations Management -->
-                  <div
-                    class="service-three-single ms-auto"
-                    data-aos="fade-left"
-                    data-aos-duration="2000"
-                    data-aos-delay="500"
-                  >
-                    <div
-                      class="service-three-item d-flex justify-content-between align-items-center"
-                    >
+                  <!-- 04 Operations Management -->
+                  <div class="service-three-single ms-auto" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="500">
+                    <div class="service-three-item d-flex justify-content-between align-items-center">
                       <div class="service-three-content d-flex tw-gap-14">
+                        <div><span class="service-three-number text-white tw-text-xl lh-1 tw-mt-5">04</span></div>
                         <div>
-                          <span
-                            class="service-three-number text-white tw-text-xl d-inline-flex align-items-center tw-gap-3 lh-1 tw-mt-5 tw-transition-3"
-                            >04
-                            <img
-                              class="tw-transition-3"
-                              src="assets/images/icons/service-three-arrow.svg"
-                              alt="arrow"
-                          /></span>
-                        </div>
-                        <div>
-                          <div>
-                            <h2
-                              class="service-three-title tw-text-15 text-white tw-mb-4"
-                            >
-                              <a href="#expertise">Operations & Technical Acumen</a>
-                            </h2>
-                          </div>
+                          <h2 class="service-three-title tw-text-15 text-white tw-mb-4"><a href="#expertise">Operations & Systems Acumen</a></h2>
                           <div class="portfolio-list portfolio-two-list">
                             <ul class="d-flex tw-gap-205 flex-wrap">
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Inventory Registers & ERP</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Material Inward / Outward</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Electrical Safety Protocols (ITI)</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">High-Precision Data Entry</span>
-                              </li>
-                              <li>
-                                <span class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">MS-CIT Distinction</span>
-                              </li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Inventory Registers & ERP</span></li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Material Inward / Outward</span></li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">Electrical Safety Protocols (ITI)</span></li>
+                              <li><span class="text-uppercase text-white tw-text-sm fw-medium border border-neutral-700 tw-px-3 tw-py-1 tw-rounded-md">95% Keyboarding Precision</span></li>
                             </ul>
                           </div>
                         </div>
-                      </div>
-                      <div class="service-three-thumb">
-                        <img
-                          src="assets/images/thumbs/service-three-thumb4.png"
-                          alt="Operations Management"
-                        />
                       </div>
                     </div>
                   </div>
@@ -937,31 +606,21 @@
                 <p class="tw-text-xl text-neutral-600">Enterprise data simulations, retail analytics, and strategic governance frameworks</p>
               </div>
             </div>
+
             <div class="row">
               <div class="col-xl-12">
-                <div
-                  class="portfolio-three-wrapper d-flex justify-content-between flex-wrap align-items-start position-relative z-1"
-                >
+                <div class="portfolio-three-wrapper d-flex justify-content-between flex-wrap align-items-start position-relative z-1">
+                  
                   <!-- Project 1: UCI Retail Analytics -->
-                  <div
-                    class="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper"
-                  >
-                    <div
-                      class="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2"
-                    >
+                  <div class="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper w-100 mb-5">
+                    <div class="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2">
                       <div class="tw-mb-6">
-                        <div>
-                          <h2 class="tw-text-605 fw-medium tw-mb-2">
-                            <a
-                              class="hover-text-main-two-600"
-                              href="#projects"
-                              >1. UCI Online Retail Sales & RFM Segmentation</a
-                            >
-                          </h2>
-                          <p class="tw-text-lg text-neutral-600 tw-mb-4">
-                            Cleaned and analyzed 541,000+ transactional records, filtered return anomalies, identified peak revenue trends (£1.51M in Nov), and classified customers using Recency, Frequency, and Monetary scoring.
-                          </p>
-                        </div>
+                        <h2 class="tw-text-605 fw-medium tw-mb-2">
+                          <a class="hover-text-main-two-600" href="#projects">1. UCI Online Retail Sales & RFM Segmentation</a>
+                        </h2>
+                        <p class="tw-text-lg text-neutral-600 tw-mb-4">
+                          Cleaned and analyzed 541,000+ transactional records, filtered return anomalies, identified peak revenue trends (£1.51M in Nov), and classified customers using Recency, Frequency, and Monetary scoring.
+                        </p>
                         <div class="portfolio-three-list portfolio-list">
                           <ul class="d-flex tw-gap-205 flex-wrap">
                             <li><span class="text-uppercase text-heading tw-text-xs fw-semibold border border-neutral-300 tw-px-2 tw-py-1 tw-rounded">Power BI</span></li>
@@ -973,50 +632,33 @@
                       </div>
                       <div>
                         <div class="portfolio-three-button">
-                          <a
-                            class="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white"
-                            href="#projects"
-                            title="Case Study"
-                            ><i class="ph ph-arrow-up-right"></i
-                          ></a>
+                          <a class="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white" href="#projects" title="Case Study">
+                            <i class="ph ph-arrow-up-right"></i>
+                          </a>
                         </div>
                       </div>
                     </div>
-                    <div
-                      class="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg"
-                      data-cursor="Analytics"
-                    >
-                      <a
-                        class="d-block cursor-hide tw-rounded-lg"
-                        href="#projects"
-                        ><img
-                          class="w-100 tw-rounded-lg"
-                          src="assets/images/thumbs/portfolio-three-thumb1.jpg"
-                          alt="Online Retail Sales Analysis"
-                      /></a>
+                    <!-- Custom Clean Visual Box (Replaces Template Image) -->
+                    <div class="analytics-card-preview">
+                      <span class="metric-pill-badge">Dataset Analysis • 541,000+ Transactions</span>
+                      <div class="my-3">
+                        <h3 class="text-white fw-bold mb-2">Cohort RFM Customer Segmentation & Revenue Analysis</h3>
+                        <p class="text-neutral-400 mb-0">November Revenue Peak: £1.51M • Key Hubs: Netherlands, Ireland, Germany</p>
+                      </div>
+                      <div class="text-neutral-500 tw-text-sm">Power BI Relational Model • Data Cleansing & Validation Pipeline</div>
                     </div>
                   </div>
 
                   <!-- Project 2: Deloitte Digital Elite Challenge -->
-                  <div
-                    class="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper"
-                  >
-                    <div
-                      class="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2"
-                    >
+                  <div class="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper w-100 mb-5">
+                    <div class="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2">
                       <div class="tw-mb-6">
-                        <div>
-                          <h2 class="tw-text-605 fw-medium tw-mb-2">
-                            <a
-                              class="hover-text-main-two-600"
-                              href="#projects"
-                              >2. Deloitte Digital Elite Challenge (AI & Cyber)</a
-                            >
-                          </h2>
-                          <p class="tw-text-lg text-neutral-600 tw-mb-4">
-                            Drafted blueprints for AI-Driven Sales Intelligence Systems in B2B enterprise workflows and engineered proposals for Autonomous Cybersecurity Compliance Agents (Silicon-Based Colleagues).
-                          </p>
-                        </div>
+                        <h2 class="tw-text-605 fw-medium tw-mb-2">
+                          <a class="hover-text-main-two-600" href="#projects">2. Deloitte Digital Elite Challenge (AI & Cyber Compliance)</a>
+                        </h2>
+                        <p class="tw-text-lg text-neutral-600 tw-mb-4">
+                          Drafted blueprints for AI-Driven Sales Intelligence Systems in B2B enterprise workflows and engineered proposals for Autonomous Cybersecurity Compliance Agents (Silicon-Based Colleagues).
+                        </p>
                         <div class="portfolio-three-list portfolio-list">
                           <ul class="d-flex tw-gap-205 flex-wrap">
                             <li><span class="text-uppercase text-heading tw-text-xs fw-semibold border border-neutral-300 tw-px-2 tw-py-1 tw-rounded">Deloitte Digital</span></li>
@@ -1025,50 +667,35 @@
                           </ul>
                         </div>
                       </div>
-                      <div class="portfolio-three-button">
-                        <a
-                          class="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white"
-                          href="#projects"
-                          title="Deloitte Track"
-                          ><i class="ph ph-arrow-up-right"></i
-                        ></a>
+                      <div>
+                        <div class="portfolio-three-button">
+                          <a class="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white" href="#projects" title="Deloitte Track">
+                            <i class="ph ph-arrow-up-right"></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
-                    <div
-                      class="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg"
-                      data-cursor="Deloitte"
-                    >
-                      <a
-                        class="d-block cursor-hide tw-rounded-lg"
-                        href="#projects"
-                        ><img
-                          class="w-100 tw-rounded-lg"
-                          src="assets/images/thumbs/portfolio-three-thumb2.jpg"
-                          alt="Deloitte Digital Elite Challenge"
-                      /></a>
+                    <!-- Custom Clean Visual Box -->
+                    <div class="analytics-card-preview">
+                      <span class="metric-pill-badge">Deloitte Digital Finalist • Innovation Framework</span>
+                      <div class="my-3">
+                        <h3 class="text-white fw-bold mb-2">Autonomous Cyber Compliance & Sales AI Strategy</h3>
+                        <p class="text-neutral-400 mb-0">Multi-agent governance models • High-touch B2B enterprise workflow optimization</p>
+                      </div>
+                      <div class="text-neutral-500 tw-text-sm">Enterprise System Architecture • Data Governance Verification</div>
                     </div>
                   </div>
 
                   <!-- Project 3: Tata Group Data Visualisation & GenAI -->
-                  <div
-                    class="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper"
-                  >
-                    <div
-                      class="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2"
-                    >
+                  <div class="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper w-100 mb-5">
+                    <div class="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2">
                       <div class="tw-mb-6">
-                        <div>
-                          <h2 class="tw-text-605 fw-medium tw-mb-2">
-                            <a
-                              class="hover-text-main-two-600"
-                              href="#projects"
-                              >3. Tata Group: BI & GenAI Analytics Simulation</a
-                            >
-                          </h2>
-                          <p class="tw-text-lg text-neutral-600 tw-mb-4">
-                            Framed executive business questions for C-suite leadership (CEO & CMO), created visual dashboards with time-series and Pareto charts, and evaluated AI models to mitigate loan delinquency.
-                          </p>
-                        </div>
+                        <h2 class="tw-text-605 fw-medium tw-mb-2">
+                          <a class="hover-text-main-two-600" href="#projects">3. Tata Group: BI & GenAI Analytics Simulation</a>
+                        </h2>
+                        <p class="tw-text-lg text-neutral-600 tw-mb-4">
+                          Framed executive business questions for C-suite leadership (CEO & CMO), created visual dashboards with time-series and Pareto charts, and evaluated AI models to mitigate loan delinquency.
+                        </p>
                         <div class="portfolio-three-list portfolio-list">
                           <ul class="d-flex tw-gap-205 flex-wrap">
                             <li><span class="text-uppercase text-heading tw-text-xs fw-semibold border border-neutral-300 tw-px-2 tw-py-1 tw-rounded">Tableau</span></li>
@@ -1077,50 +704,35 @@
                           </ul>
                         </div>
                       </div>
-                      <div class="portfolio-three-button">
-                        <a
-                          class="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white"
-                          href="#projects"
-                          title="Tata Group"
-                          ><i class="ph ph-arrow-up-right"></i
-                        ></a>
+                      <div>
+                        <div class="portfolio-three-button">
+                          <a class="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white" href="#projects" title="Tata Group">
+                            <i class="ph ph-arrow-up-right"></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
-                    <div
-                      class="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg"
-                      data-cursor="Tata BI"
-                    >
-                      <a
-                        class="d-block cursor-hide tw-rounded-lg"
-                        href="#projects"
-                        ><img
-                          class="w-100 tw-rounded-lg"
-                          src="assets/images/thumbs/portfolio-three-thumb3.jpg"
-                          alt="Tata BI and GenAI"
-                      /></a>
+                    <!-- Custom Clean Visual Box -->
+                    <div class="analytics-card-preview">
+                      <span class="metric-pill-badge">Tata Group Simulation • C-Suite KPI Suite</span>
+                      <div class="my-3">
+                        <h3 class="text-white fw-bold mb-2">Executive Business Intelligence & Risk Delinquency Scoring</h3>
+                        <p class="text-neutral-400 mb-0">Pareto distributions • Global commercial performance • AI predictive models</p>
+                      </div>
+                      <div class="text-neutral-500 tw-text-sm">Tableau Desktop Visual Analytics • Risk Decision Pipelines</div>
                     </div>
                   </div>
 
                   <!-- Project 4: Tata Cybersecurity IAM & ESG Reporting -->
-                  <div
-                    class="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper"
-                  >
-                    <div
-                      class="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2"
-                    >
+                  <div class="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper w-100 mb-5">
+                    <div class="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2">
                       <div class="tw-mb-6">
-                        <div>
-                          <h2 class="tw-text-605 fw-medium tw-mb-2">
-                            <a
-                              class="hover-text-main-two-600"
-                              href="#projects"
-                              >4. Tata Group: Cybersecurity IAM & ESG Reporting</a
-                            >
-                          </h2>
-                          <p class="tw-text-lg text-neutral-600 tw-mb-4">
-                            Structured enterprise Role-Based Access Control (RBAC) permission matrices following least-privilege principles, and benchmarked corporate ESG sustainability metrics against global standards.
-                          </p>
-                        </div>
+                        <h2 class="tw-text-605 fw-medium tw-mb-2">
+                          <a class="hover-text-main-two-600" href="#projects">4. Tata Group: Cybersecurity IAM & ESG Reporting</a>
+                        </h2>
+                        <p class="tw-text-lg text-neutral-600 tw-mb-4">
+                          Structured enterprise Role-Based Access Control (RBAC) permission matrices following least-privilege principles, and benchmarked corporate ESG sustainability metrics against global standards.
+                        </p>
                         <div class="portfolio-three-list portfolio-list">
                           <ul class="d-flex tw-gap-205 flex-wrap">
                             <li><span class="text-uppercase text-heading tw-text-xs fw-semibold border border-neutral-300 tw-px-2 tw-py-1 tw-rounded">IAM / RBAC</span></li>
@@ -1129,36 +741,32 @@
                           </ul>
                         </div>
                       </div>
-                      <div class="portfolio-three-button">
-                        <a
-                          class="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white"
-                          href="#projects"
-                          title="Tata IAM"
-                          ><i class="ph ph-arrow-up-right"></i
-                        ></a>
+                      <div>
+                        <div class="portfolio-three-button">
+                          <a class="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white" href="#projects" title="Tata IAM">
+                            <i class="ph ph-arrow-up-right"></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
-                    <div
-                      class="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg"
-                      data-cursor="Security"
-                    >
-                      <a
-                        class="d-block cursor-hide tw-rounded-lg"
-                        href="#projects"
-                        ><img
-                          class="w-100 tw-rounded-lg"
-                          src="assets/images/thumbs/portfolio-three-thumb4.jpg"
-                          alt="Tata IAM & ESG"
-                      /></a>
+                    <!-- Custom Clean Visual Box -->
+                    <div class="analytics-card-preview">
+                      <span class="metric-pill-badge">Tata Group Simulation • Governance & Compliance</span>
+                      <div class="my-3">
+                        <h3 class="text-white fw-bold mb-2">Role-Based Access Control (RBAC) Matrix & ESG Benchmarks</h3>
+                        <p class="text-neutral-400 mb-0">Least-privilege permission audits • THE Impact Rankings sustainability fitment</p>
+                      </div>
+                      <div class="text-neutral-500 tw-text-sm">Enterprise Access Governance • Sustainability KPI Tracking</div>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- What I Build Section -->
+        <!-- What I Deliver Section -->
         <div id="what-i-build" class="feature-three-area py-120 position-relative z-1 bg-black">
           <div class="container tw-container-1800-px">
             <div class="row tw-mb-15">
@@ -1170,176 +778,48 @@
             <div class="row">
               <div class="col-xl-12">
                 <div class="feature-three-wrapper hover__widget">
-                  <!-- 01 Data Cleansing -->
-                  <div
-                    class="feature-three-single current hover__reveal-item"
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-delay="200"
-                  >
-                    <div
-                      class="feature-three-item d-flex justify-content-between align-items-center"
-                    >
+                  <div class="feature-three-single current hover__reveal-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="feature-three-item d-flex justify-content-between align-items-center">
                       <div class="feature-three-left d-flex align-items-center">
-                        <div>
-                          <span
-                            class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20"
-                            >01</span
-                          >
-                        </div>
-                        <div>
-                          <span
-                            class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px"
-                            >Cleansing</span
-                          >
-                        </div>
-                        <div>
-                          <span
-                            class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block"
-                            >Data Cleansing, Validation & Transformation</span
-                          >
-                        </div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20">01</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px">Cleansing</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Data Cleansing, Validation & Transformation</span></div>
                       </div>
-                      <div>
-                        <span
-                          class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block"
-                          >High Accuracy</span
-                        >
-                      </div>
+                      <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">High Accuracy</span></div>
                     </div>
-                    <div
-                      class="hover__reveal-bg bg-img"
-                      data-background-image="assets/images/thumbs/feature-three-thumb1.jpg"
-                    ></div>
                   </div>
 
-                  <!-- 02 Executive Dashboards -->
-                  <div
-                    class="feature-three-single hover__reveal-item"
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-delay="200"
-                  >
-                    <div
-                      class="feature-three-item d-flex justify-content-between align-items-center"
-                    >
+                  <div class="feature-three-single hover__reveal-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="feature-three-item d-flex justify-content-between align-items-center">
                       <div class="feature-three-left d-flex align-items-center">
-                        <div>
-                          <span
-                            class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20"
-                            >02</span
-                          >
-                        </div>
-                        <div>
-                          <span
-                            class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px"
-                            >BI Reporting</span
-                          >
-                        </div>
-                        <div>
-                          <span
-                            class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block"
-                            >Interactive Power BI & Tableau Dashboards</span
-                          >
-                        </div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20">02</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px">BI Reporting</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Interactive Power BI & Tableau Dashboards</span></div>
                       </div>
-                      <div>
-                        <span
-                          class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block"
-                          >C-Suite Ready</span
-                        >
-                      </div>
+                      <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">C-Suite Ready</span></div>
                     </div>
-                    <div
-                      class="hover__reveal-bg bg-img"
-                      data-background-image="assets/images/thumbs/portfolio-two-thumb1.jpg"
-                    ></div>
                   </div>
 
-                  <!-- 03 IAM & Access Controls -->
-                  <div
-                    class="feature-three-single hover__reveal-item"
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-delay="200"
-                  >
-                    <div
-                      class="feature-three-item d-flex justify-content-between align-items-center"
-                    >
+                  <div class="feature-three-single hover__reveal-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="feature-three-item d-flex justify-content-between align-items-center">
                       <div class="feature-three-left d-flex align-items-center">
-                        <div>
-                          <span
-                            class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20"
-                            >03</span
-                          >
-                        </div>
-                        <div>
-                          <span
-                            class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px"
-                            >Governance</span
-                          >
-                        </div>
-                        <div>
-                          <span
-                            class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block"
-                            >IAM Role-Based Access Control (RBAC) Matrices</span
-                          >
-                        </div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20">03</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px">Governance</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">IAM Role-Based Access Control (RBAC) Matrices</span></div>
                       </div>
-                      <div>
-                        <span
-                          class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block"
-                          >Security First</span
-                        >
-                      </div>
+                      <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Security First</span></div>
                     </div>
-                    <div
-                      class="hover__reveal-bg bg-img"
-                      data-background-image="assets/images/thumbs/portfolio-two-thumb2.jpg"
-                    ></div>
                   </div>
 
-                  <!-- 04 Operations Workflows -->
-                  <div
-                    class="feature-three-single hover__reveal-item"
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-delay="200"
-                  >
-                    <div
-                      class="feature-three-item d-flex justify-content-between align-items-center"
-                    >
+                  <div class="feature-three-single hover__reveal-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="feature-three-item d-flex justify-content-between align-items-center">
                       <div class="feature-three-left d-flex align-items-center">
-                        <div>
-                          <span
-                            class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20"
-                            >04</span
-                          >
-                        </div>
-                        <div>
-                          <span
-                            class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px"
-                            >Operations</span
-                          >
-                        </div>
-                        <div>
-                          <span
-                            class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block"
-                            >Inventory Management & Administrative Registers</span
-                          >
-                        </div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20">04</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px">Operations</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Inventory Management & Administrative Registers</span></div>
                       </div>
-                      <div>
-                        <span
-                          class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block"
-                          >Process Optimization</span
-                        >
-                      </div>
+                      <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Process Optimization</span></div>
                     </div>
-                    <div
-                      class="hover__reveal-bg bg-img"
-                      data-background-image="assets/images/thumbs/portfolio-two-thumb3.jpg"
-                    ></div>
                   </div>
                 </div>
               </div>
@@ -1348,18 +828,11 @@
         </div>
 
         <!-- Footer / Contact Section -->
-        <section
-          id="contact"
-          class="footer-three-area pt-120 tw-pb-10 position-relative z-1 bg-black"
-        >
+        <section id="contact" class="footer-three-area pt-120 tw-pb-10 position-relative z-1 bg-black">
           <div class="container tw-container-1800-px">
             <div class="row pb-120 justify-content-center text-center">
               <div class="col-xl-8 col-lg-10">
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
-                >
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                   <span class="text-main-two-600 text-uppercase fw-bold tracking-wider tw-text-sm border border-neutral-800 tw-px-4 tw-py-2 tw-rounded-md">CONNECT ACROSS PLATFORMS</span>
                   <h2 class="tw-text-15 text-white font-heading tw-mt-4 tw-mb-4">Let's Build Something Great Together</h2>
                   <p class="tw-text-xl text-neutral-400 tw-mb-10">Open for full-time opportunities, data consulting, and operations management roles.</p>
@@ -1379,128 +852,73 @@
               </div>
             </div>
           </div>
+
           <div class="footer-three-border tw-px-18 tw-mb-10">
             <div class="container-fluid gx-0">
               <div class="row">
                 <div class="col-xl-12">
-                  <div
-                    class="footer-three-middile d-flex align-items-center justify-content-between"
-                  >
-                    <div
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="200"
-                    >
-                      <h4 class="tw-text-2xl text-white tw-mb-2">
-                        Quick Links
-                      </h4>
+                  <div class="footer-three-middile d-flex align-items-center justify-content-between">
+                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                      <h4 class="tw-text-2xl text-white tw-mb-2">Quick Links</h4>
                       <ul class="d-flex tw-gap-4 flex-wrap list-unstyled">
-                        <li>
-                          <a class="tw-text-lg text-white" href="#about">About Me</a>
-                        </li>
-                        <li>
-                          <a class="tw-text-lg text-white" href="#expertise">Expertise</a>
-                        </li>
-                        <li>
-                          <a class="tw-text-lg text-white" href="#projects">Projects</a>
-                        </li>
-                        <li>
-                          <a class="tw-text-lg text-white" href="#what-i-build">What I Deliver</a>
-                        </li>
-                        <li>
-                          <a class="tw-text-lg text-white" href="#contact">Contact</a>
-                        </li>
+                        <li><a class="tw-text-lg text-white" href="#about">About Me</a></li>
+                        <li><a class="tw-text-lg text-white" href="#expertise">Expertise</a></li>
+                        <li><a class="tw-text-lg text-white" href="#projects">Projects</a></li>
+                        <li><a class="tw-text-lg text-white" href="#what-i-build">What I Deliver</a></li>
+                        <li><a class="tw-text-lg text-white" href="#contact">Contact</a></li>
                       </ul>
                     </div>
-                    <div
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="300"
-                    >
-                      <a
-                        class="footer-three-back-to-top tw-w-170 tw-h-170 lh-1 d-inline-flex justify-content-center align-items-center bg-main-two-600 text-white tw-text-3xl rounded-circle"
-                        href="#"
-                        ><i class="ph ph-arrow-up"></i
-                      ></a>
+                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                      <a class="footer-three-back-to-top tw-w-170 tw-h-170 lh-1 d-inline-flex justify-content-center align-items-center bg-main-two-600 text-white tw-text-3xl rounded-circle" href="#">
+                        <i class="ph ph-arrow-up"></i>
+                      </a>
                     </div>
-                    <div
-                      class="text-lg-end"
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="400"
-                    >
-                      <h4 class="tw-text-2xl text-white tw-mb-2">
-                        Ashish Portfolio
-                      </h4>
-                      <p class="tw-text-lg text-white">
-                        © 2026 Ashish M. Sontakke. All rights reserved.
-                      </p>
+                    <div class="text-lg-end" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                      <h4 class="tw-text-2xl text-white tw-mb-2">Ashish Portfolio</h4>
+                      <p class="tw-text-lg text-white">© 2026 Ashish M. Sontakke. All rights reserved.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
           <div>
             <div class="container tw-container-1800-px">
               <div class="row">
                 <div class="col-xl-12">
                   <div class="footer-three-bottom text-center">
-                    <h5 class="footer-three-bottom-title text-white text-center">
-                      ASHISH
-                    </h5>
+                    <h5 class="footer-three-bottom-title text-white text-center">ASHISH</h5>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div>
-            <img
-              class="position-absolute top-0 start-0 z-n1"
-              src="assets/images/shapes/footer-three-bg-shape.png"
-              alt="shape"
-            />
+            <img class="position-absolute top-0 start-0 z-n1" src="assets/images/shapes/footer-three-bg-shape.png" alt="shape" />
           </div>
         </section>
       </div>
     </div>
-    <!-- Jquery js -->
+
+    <!-- Scripts -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <!-- phosphor Js -->
     <script src="assets/js/phosphor-icon.js"></script>
-    <!-- Bootstrap Bundle Js -->
     <script src="assets/js/boostrap.bundle.min.js"></script>
-    <!-- aos -->
     <script src="assets/js/aos.js"></script>
-    <!-- magnific popup js -->
     <script src="assets/js/magnific-popup.min.js"></script>
-    <!-- marquee -->
     <script src="assets/js/jquery.marquee.min.js"></script>
-    <!-- counterup js -->
     <script src="assets/js/purecounter.js"></script>
-    <!-- swiper bundle js -->
     <script src="assets/js/swiper-bundle.min.js"></script>
-
-    <!-- gsap js -->
     <script src="assets/js/gsap/gsap.js"></script>
-    <!-- Scroll plugin -->
     <script src="assets/js/gsap/gsap-scroll-to-plugin.js"></script>
-    <!-- Scroll smoother -->
     <script src="assets/js/gsap/gsap-scroll-smoother.js"></script>
-    <!-- Scroll Trigger -->
     <script src="assets/js/gsap/gsap-scroll-trigger.js"></script>
-    <!-- split text -->
     <script src="assets/js/gsap/gsap-split-text.js"></script>
-    <!-- chroma js -->
     <script src="assets/js/gsap/chroma.min.js"></script>
-
-    <!-- custom GSAP -->
     <script src="assets/js/slider-active.js"></script>
-    <!-- custom GSAP -->
     <script src="assets/js/custom-gsap.js"></script>
-    <!-- main js -->
     <script src="assets/js/main.js"></script>
-    <!-- cursor js -->
     <script src="assets/js/tw-cursor.js"></script>
   </body>
 </html>
