@@ -30,6 +30,30 @@
     
     <!-- Responsive Custom Tweaks -->
     <style>
+      /* Fix 1: Pull the hero portrait down into the middle of the text */
+      .banner-three-man {
+        top: 105px !important;
+        bottom: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 2 !important;
+      }
+      .banner-three-man img {
+        max-height: 480px !important;
+        width: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+      }
+
+      /* Fix 2: Ensure the About photo animates smoothly like the original video */
+      .about-three-thumb {
+        overflow: hidden !important;
+        position: relative !important;
+      }
+      .about-three-thumb img {
+        object-fit: cover !important;
+        display: block !important;
+      }
       html, body {
         overflow-x: hidden;
         width: 100%;
@@ -518,6 +542,20 @@
 
         <!-- About Section -->
         <section id="about" class="about-three-area py-120 position-relative z-1">
+          <div
+  class="about-three-thumb w-100 tw-clip-anim tw-rounded-lg"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+  data-aos-delay="200"
+>
+  <img
+    class="tw-anim-img w-100 tw-rounded-lg"
+    data-animate="true"
+    src="assets/images/thumbs/devender-about.jpg"
+    alt="Ashish About"
+    style="object-fit: cover; max-height: 650px;"
+  />
+</div>
           <div class="container tw-container-1800-px">
             <div class="about-three-top position-relative z-1">
               <div class="row justify-content-center tw-mb-21">
